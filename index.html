@@ -1,0 +1,578 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Campaña 25N Medicina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..150,500..900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: plan de campaña de una columna legible, con banda naranja de cabecera (color oficial del 25N) y bloques por sección */
+:root{
+  --bg:#FBF8FC;
+  --surface:#FFFFFF;
+  --ink:#24142F;
+  --muted:#6B5A76;
+  --line:#E6DCEB;
+  --orange:#E2580B;
+  --orange-soft:#FDEBDD;
+  --violet:#5B2A86;
+  --violet-soft:#EFE6F7;
+  --ok:#1F7A4D; --ok-soft:#E3F3EA;
+  --no:#B3261E; --no-soft:#FBE7E5;
+  --warn:#C98A00;
+  --on-orange:#FFFFFF;
+  --f-display:"Anybody","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#160E1C; --surface:#211729; --ink:#F2EAF6; --muted:#B5A5C0; --line:#3A2C45;
+  --orange:#FF8A3D; --orange-soft:#3A2212; --violet:#C9A2F0; --violet-soft:#2D1F3B;
+  --ok:#6FD39E; --ok-soft:#173326; --no:#FF8A80; --no-soft:#3A1A18; --warn:#F2C14E; --on-orange:#1B0F05;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#160E1C; --surface:#211729; --ink:#F2EAF6; --muted:#B5A5C0; --line:#3A2C45;
+  --orange:#FF8A3D; --orange-soft:#3A2212; --violet:#C9A2F0; --violet-soft:#2D1F3B;
+  --ok:#6FD39E; --ok-soft:#173326; --no:#FF8A80; --no-soft:#3A1A18; --warn:#F2C14E; --on-orange:#1B0F05;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.05;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;font-stretch:115%;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:700;font-stretch:105%}
+p{margin:0}
+.prose{max-width:65ch}
+a{color:var(--violet)}
+.label{font-family:var(--f-mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.tab{font-variant-numeric:tabular-nums}
+
+/* Cabecera */
+.hero{background:var(--orange);color:var(--on-orange)}
+.hero .wrap{padding-block:48px 40px;display:grid;gap:20px}
+.hero .label{color:var(--on-orange);opacity:.85}
+.hero h1{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:900;font-stretch:130%;letter-spacing:-.02em;line-height:.92}
+.hero h1 span{display:block;font-stretch:80%;font-weight:600;font-size:.42em;letter-spacing:0;margin-top:.5em;line-height:1.15}
+.hero p.lead{font-size:1.15rem;max-width:58ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:6px}
+.facts div{display:grid;gap:2px}
+.facts b{font-family:var(--f-display);font-size:1.25rem;font-stretch:110%}
+.facts .label{font-size:.68rem}
+
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--orange)}
+nav.toc .wrap{overflow-x:auto}
+nav.toc ul{display:flex;gap:4px;list-style:none;margin:0;padding:10px 0;white-space:nowrap}
+nav.toc a{display:block;padding:6px 12px;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--orange-soft);color:var(--ink);outline:none}
+
+section{padding-block:56px 8px}
+section > .wrap{display:grid;gap:22px}
+.sec-head{display:grid;gap:8px}
+.sec-head p{color:var(--muted);max-width:65ch}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
+.box ul,.box ol{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.note{background:var(--violet-soft);border-radius:10px;padding:16px 20px;display:grid;gap:6px}
+.note.orange{background:var(--orange-soft)}
+
+/* Por qué la fecha */
+.timeline{display:grid;gap:0;border-left:3px solid var(--orange);margin-left:6px}
+.timeline div{padding:0 0 18px 20px;position:relative;display:grid;gap:2px}
+.timeline div::before{content:"";position:absolute;left:-8.5px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--orange)}
+.timeline b{font-family:var(--f-mono);font-size:.9rem;color:var(--orange)}
+
+/* Equipo */
+.member{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start}
+.avatar{grid-row:span 3;width:44px;height:44px;border-radius:50%;background:var(--violet);color:var(--bg);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.2rem}
+.member .label{font-size:.68rem}
+.member p{font-size:.95rem}
+
+/* Tablas */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.t{font-family:var(--f-mono);font-size:.85rem;white-space:nowrap;color:var(--orange)}
+.who{display:inline-block;font-family:var(--f-mono);font-size:.75rem;padding:1px 8px;border-radius:999px;background:var(--violet-soft);color:var(--violet);white-space:nowrap}
+
+/* Guion */
+.block{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.block:last-child{border-bottom:1px solid var(--line)}
+.block .time{display:grid;gap:6px;align-content:start}
+.block .time b{font-family:var(--f-display);font-size:1.5rem;font-stretch:110%;color:var(--orange);font-variant-numeric:tabular-nums}
+.block .body{display:grid;gap:10px;min-width:0}
+.block ul{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.say{border-left:3px solid var(--violet);padding:4px 0 4px 14px;font-style:italic;color:var(--ink)}
+@media (max-width:560px){.block{grid-template-columns:1fr;gap:8px}.block .time{grid-auto-flow:column;justify-content:start;align-items:center;gap:12px}}
+
+/* Violentómetro */
+.vm{display:grid;grid-template-columns:repeat(3,1fr);border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.vm div{padding:14px 16px;display:grid;gap:6px;align-content:start;font-size:.93rem;min-width:0}
+.vm .z1{background:color-mix(in srgb,var(--warn) 18%,var(--surface))}
+.vm .z2{background:color-mix(in srgb,var(--orange) 22%,var(--surface))}
+.vm .z3{background:color-mix(in srgb,var(--no) 22%,var(--surface))}
+.vm h3{font-size:1rem}
+@media (max-width:640px){.vm{grid-template-columns:1fr}}
+
+/* Cartel */
+.poster-row{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:28px;align-items:start}
+@media (max-width:720px){.poster-row{grid-template-columns:1fr}}
+.poster{aspect-ratio:2/3;max-width:100%;width:100%;background:#E2580B;color:#1B0B26;border-radius:6px;padding:22px 20px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;box-shadow:0 14px 40px -18px rgba(36,20,47,.55);overflow:hidden;position:relative}
+.poster .ptop{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+.poster .pmid{align-self:center;display:grid;gap:10px}
+.poster .big{font-family:var(--f-display);font-weight:900;font-stretch:140%;font-size:3.6rem;line-height:.82;letter-spacing:-.03em;color:#FFF6EE}
+.poster .head{font-family:var(--f-display);font-weight:800;font-stretch:90%;font-size:1.45rem;line-height:1.02}
+.poster .sub{font-size:.78rem;line-height:1.3;max-width:28ch}
+.poster .pbot{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;border-top:2px solid #1B0B26;padding-top:10px;font-size:.72rem;line-height:1.3}
+.poster .qr{width:52px;height:52px;background:repeating-conic-gradient(#1B0B26 0 25%,#FFF6EE 0 50%) 0 0/13px 13px;border:3px solid #FFF6EE;border-radius:3px}
+.poster .ribbon{position:absolute;right:-30px;top:58px;width:120px;height:120px;border:14px solid #5B2A86;border-radius:50% 50% 50% 0;transform:rotate(-45deg);opacity:.9}
+
+/* Mito o realidad */
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+.card{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:8px;align-content:start;min-height:120px}
+.card:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.card .q{font-weight:600}
+.card .hint{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.card .a{display:none;font-size:.93rem}
+.card[aria-expanded="true"] .a{display:block}
+.card[aria-expanded="true"] .hint{display:none}
+.card[aria-expanded="true"][data-v="m"]{background:var(--no-soft);border-color:var(--no)}
+.card[aria-expanded="true"][data-v="r"]{background:var(--ok-soft);border-color:var(--ok)}
+.verdict{font-family:var(--f-display);font-weight:800;font-stretch:110%}
+.card[data-v="m"] .verdict{color:var(--no)}
+.card[data-v="r"] .verdict{color:var(--ok)}
+
+/* Actividades */
+.act{display:grid;gap:12px}
+.act .meta{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-mono);font-size:.72rem;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chip.o{border-color:var(--orange);color:var(--orange)}
+.act h3{font-size:1.35rem}
+.act details{border-top:1px dashed var(--line);padding-top:8px}
+.act summary{cursor:pointer;font-weight:600;color:var(--violet)}
+.act summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+/* Checklist */
+.check{display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:8px;cursor:pointer}
+.check label:hover{background:var(--orange-soft)}
+.check input{accent-color:var(--orange);width:18px;height:18px;margin-top:3px;flex:none}
+.check input:checked + span{text-decoration:line-through;color:var(--muted)}
+
+.help{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.help .box b{font-family:var(--f-display);font-size:2rem;font-stretch:120%;color:var(--orange);line-height:1}
+
+footer{padding-block:48px 40px;color:var(--muted);font-size:.9rem}
+footer ul{padding-left:1.2em;display:grid;gap:4px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="label">Campaña universitaria · Facultad de Medicina · 25 de noviembre de 2026</p>
+    <h1>Pinta de naranja<span>Día Internacional de la Eliminación de la Violencia contra la Mujer</span></h1>
+    <p class="lead">Plan completo para un equipo de 5: una plática corta con mirada médica, un cartel, y un circuito de actividades sencillas para hacer justo después.</p>
+    <div class="facts">
+      <div><span class="label">Fecha</span><b class="tab">Mié 25 nov</b></div>
+      <div><span class="label">Duración total</span><b class="tab">≈ 65 min</b></div>
+      <div><span class="label">Plática</span><b class="tab">18 min</b></div>
+      <div><span class="label">Equipo</span><b class="tab">5 personas</b></div>
+      <div><span class="label">Prep. disponible</span><b class="tab">4 semanas</b></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Secciones">
+  <div class="wrap"><ul>
+    <li><a href="#idea">La idea</a></li>
+    <li><a href="#fecha">Por qué el 25N</a></li>
+    <li><a href="#prep">Preparación</a></li>
+    <li><a href="#programa">Programa</a></li>
+    <li><a href="#platica">Plática</a></li>
+    <li><a href="#cartel">Cartel</a></li>
+    <li><a href="#actividades">Actividades</a></li>
+    <li><a href="#materiales">Materiales</a></li>
+    <li><a href="#cuidados">Cuidados</a></li>
+    <li><a href="#check">Checklist</a></li>
+  </ul></div>
+</nav>
+
+<main>
+
+<section id="idea"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">01 · Concepto</p>
+    <h2>La idea en una frase</h2>
+    <p>Que quien asista salga sabiendo reconocer la violencia, cuánto pesa en la salud y a qué número llamar. Lo que no se nombra no se puede detener.</p>
+  </div>
+  <div class="grid g3">
+    <div class="box"><span class="label">Objetivo</span><p>Sensibilizar a estudiantes sobre los tipos de violencia contra las mujeres, sus efectos en la salud y las rutas de ayuda, con un enfoque desde la medicina.</p></div>
+    <div class="box"><span class="label">Público</span><p>Estudiantes de la universidad (sirve para cualquier carrera). Ideal: un grupo de 25 a 40 personas en aula o explanada.</p></div>
+    <div class="box"><span class="label">Sello del equipo</span><p>Somos de medicina: el bloque fuerte de la plática es qué ve el personal de salud, qué dice la NOM-046 y cómo acompañar a alguien sin revictimizar.</p></div>
+  </div>
+  <div class="note orange">
+    <span class="label">Detalle de identidad</span>
+    <p>El naranja es el color de la campaña ÚNETE de la ONU y del "Día Naranja" (cada día 25). Pidan que todo el equipo, y quien quiera del público, vaya con algo naranja ese día.</p>
+  </div>
+</div></section>
+
+<section id="fecha"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">02 · Contexto</p>
+    <h2>Por qué el 25 de noviembre</h2>
+    <p>Esto se cuenta en 1 minuto dentro de la apertura de la plática.</p>
+  </div>
+  <div class="timeline prose">
+    <div><b>25 nov 1960</b><p>Asesinan a las hermanas Patria, Minerva y María Teresa Mirabal, activistas contra la dictadura de Trujillo en República Dominicana.</p></div>
+    <div><b>1981</b><p>El Primer Encuentro Feminista Latinoamericano y del Caribe, en Bogotá, elige esa fecha en su memoria.</p></div>
+    <div><b>17 dic 1999</b><p>La Asamblea General de la ONU lo declara oficialmente día internacional (resolución 54/134).</p></div>
+    <div><b>25 nov → 10 dic</b><p>Arrancan los 16 días de activismo, que terminan en el Día de los Derechos Humanos.</p></div>
+  </div>
+</div></section>
+
+<section id="prep"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">03 · Calendario</p>
+    <h2>Cuatro semanas de preparación</h2>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Semana</th><th>Qué se entrega</th></tr></thead>
+    <tbody>
+      <tr><td class="t">26 oct – 1 nov</td><td>Repartir tareas y bloques de la plática. Conseguir el contacto de psicología universitaria.</td></tr>
+      <tr><td class="t">2 – 8 nov</td><td>Primer borrador de la presentación y del cartel. Lista de materiales con costos.</td></tr>
+      <tr><td class="t">9 – 15 nov</td><td>Cartel final impreso y publicado. Tarjetas de actividades listas. Primer ensayo cronometrado de la plática.</td></tr>
+      <tr><td class="t">16 – 22 nov</td><td>Difusión en grupos y redes. Ensayo general con actividades. Compra de dulces y listones.</td></tr>
+      <tr><td class="t">Mar 24 nov</td><td>Preparar materiales: revisar proyector, pegar cinta del violentómetro, preparar muro.</td></tr>
+      <tr><td class="t">Mié 25 nov</td><td>Día del evento. Todos de naranja.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="programa"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">04 · El día</p>
+    <h2>Programa minuto a minuto</h2>
+    <p>Pensado para una hora de clase. Si tienen menos tiempo, quiten una estación del circuito.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Minuto</th><th>Momento</th><th>Duración</th></tr></thead>
+    <tbody>
+      <tr><td class="t">00</td><td>Bienvenida, listón naranja a la entrada, aviso de contenido sensible</td><td class="tab">3 min</td></tr>
+      <tr><td class="t">03</td><td>Plática "Nombrarla para detenerla"</td><td class="tab">18 min</td></tr>
+      <tr><td class="t">21</td><td>Dividir en 3 equipos y pasar a estaciones</td><td class="tab">2 min</td></tr>
+      <tr><td class="t">23</td><td>Circuito: Violentómetro · Mito o realidad · ¿Qué harías? (rotan cada 9 min)</td><td class="tab">27 min</td></tr>
+      <tr><td class="t">50</td><td>Ruleta de la prevención con todo el grupo</td><td class="tab">7 min</td></tr>
+      <tr><td class="t">57</td><td>Muro naranja de compromisos y foto grupal</td><td class="tab">6 min</td></tr>
+      <tr><td class="t">63</td><td>Cierre: números de ayuda y agradecimiento</td><td class="tab">2 min</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="platica"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">05 · Guion</p>
+    <h2>Plática: "Nombrarla para detenerla"</h2>
+    <p>18 minutos en 6 bloques. Cada bloque trae lo que se dice y una frase sugerida para arrancar. Máximo 2 o 3 diapositivas por bloque, con poco texto.</p>
+  </div>
+
+  <div>
+    <div class="block"><div class="time"><b>0–2</b></div><div class="body">
+      <h3>Apertura con pregunta</h3>
+      <p class="say">"Levanten la mano si conocen a una mujer, en su familia, amistades o escuela, que haya vivido algún tipo de violencia." (Esperar. Casi todo el salón la levanta.)</p>
+      <ul><li>Presentar al equipo y el objetivo.</li><li>Contar en 30 segundos la historia de las hermanas Mirabal.</li><li>Pedir respeto: nadie tiene que compartir nada personal.</li></ul>
+    </div></div>
+
+    <div class="block"><div class="time"><b>2–5</b></div><div class="body">
+      <h3>¿Qué es y qué tipos hay?</h3>
+      <ul>
+        <li><b>Definición (ONU, 1993):</b> cualquier acto de violencia basado en el género que cause o pueda causar daño físico, sexual o psicológico a la mujer, incluidas amenazas, coerción o privación de la libertad, en lo público o lo privado.</li>
+        <li><b>En México</b> la Ley General de Acceso de las Mujeres a una Vida Libre de Violencia reconoce, entre otros, estos tipos: psicológica, física, patrimonial, económica y sexual. La "Ley Olimpia" agregó la violencia digital.</li>
+        <li>Dar un ejemplo cotidiano de cada uno (ej. económica: "no te doy dinero si no me dices en qué lo gastas").</li>
+      </ul>
+    </div></div>
+
+    <div class="block"><div class="time"><b>5–9</b></div><div class="body">
+      <h3>Las cifras y el violentómetro</h3>
+      <ul>
+        <li><b>7 de cada 10</b> mujeres de 15 años o más en México han vivido al menos un tipo de violencia en su vida (70.1 %, ENDIREH 2021, INEGI).</li>
+        <li>Solo en el último año: psicológica 29.4 %, sexual 23.3 %, económica 16.2 %, física 10.2 %.</li>
+        <li>En el mundo, cerca de 1 de cada 3 mujeres ha sufrido violencia física o sexual (OMS).</li>
+        <li>Mostrar el <b>violentómetro</b>: la violencia escala. Empieza con "bromas" y celos y puede terminar en feminicidio. Dejarlo como puente a la actividad.</li>
+      </ul>
+      <p class="say">"Lo más peligroso del violentómetro es la parte de abajo, porque es la que normalizamos."</p>
+    </div></div>
+
+    <div class="block"><div class="time"><b>9–14</b></div><div class="body">
+      <h3>La mirada médica</h3>
+      <ul>
+        <li><b>Efectos en la salud:</b> lesiones, dolor crónico, problemas gastrointestinales, depresión, ansiedad, estrés postraumático, consumo de sustancias, ITS y embarazos no planeados.</li>
+        <li><b>Señales que puede notar el personal de salud:</b> lesiones que no coinciden con la explicación, visitas repetidas por síntomas vagos, pareja que no deja hablar a la paciente o contesta por ella, retraso en buscar atención.</li>
+        <li><b>NOM-046-SSA2-2005:</b> obliga a las instituciones de salud a detectar, atender y orientar en casos de violencia familiar y sexual, y a dar aviso al Ministerio Público cuando corresponde.</li>
+        <li><b>Cómo acompañar (modelo de la OMS):</b> escuchar sin juzgar, preguntar qué necesita, validar ("no es tu culpa"), revisar su seguridad y conectarla con apoyo.</li>
+      </ul>
+      <p class="say">"Como futuros médicos, a veces seremos la primera persona a la que se lo cuenten. Lo que digamos en ese momento importa."</p>
+    </div></div>
+
+    <div class="block"><div class="time"><b>14–17</b></div><div class="body">
+      <h3>Dónde pedir ayuda</h3>
+      <ul>
+        <li><b>911</b> si hay peligro inmediato.</li>
+        <li><b>079, opción 1</b>: Línea de las Mujeres. Da atención psicológica y asesoría legal, y canaliza a los Centros LIBRE y a los Centros de Justicia estatales.</li>
+        <li>Instituto Aguascalientes de las Mujeres y el servicio de psicología de la universidad (pongan sus datos verificados en la diapositiva).</li>
+        <li>Si eres testigo: no confrontes si es peligroso, distrae, busca apoyo, documenta si es seguro y pregunta a la persona después cómo está.</li>
+      </ul>
+    </div></div>
+
+    <div class="block"><div class="time"><b>17–18</b></div><div class="body">
+      <h3>Cierre y paso a actividades</h3>
+      <p class="say">"Ya sabemos nombrarla. Ahora vamos a practicar reconocerla."</p>
+      <ul><li>Dejar en pantalla los números de ayuda mientras se forman los equipos.</li></ul>
+    </div></div>
+  </div>
+
+  <div class="sec-head" style="margin-top:12px"><h3>Violentómetro para la diapositiva</h3><p>Versión resumida del violentómetro del IPN. Úsenlo también en la actividad.</p></div>
+  <div class="vm">
+    <div class="z1"><span class="label">Zona amarilla</span><h3>Ten cuidado, la violencia puede aumentar</h3><p>Bromas hirientes, chantaje, mentiras, celos, culpabilizar, ignorar, ridiculizar, revisar el celular.</p></div>
+    <div class="z2"><span class="label">Zona naranja</span><h3>Reacciona, no lo normalices</h3><p>Humillar en público, controlar a dónde vas, prohibir amistades, controlar tu dinero, amenazar, empujar, golpear "jugando".</p></div>
+    <div class="z3"><span class="label">Zona roja</span><h3>Necesitas ayuda profesional</h3><p>Golpes, encierro, amenazas con objetos o armas, abuso sexual, violación, mutilación, feminicidio.</p></div>
+  </div>
+</div></section>
+
+<section id="cartel"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">06 · Difusión</p>
+    <h2>El cartel</h2>
+    <p>Boceto de composición para armarlo en Canva. Una sola idea grande, poco texto y fácil de leer a 3 metros.</p>
+  </div>
+  <div class="poster-row">
+    <div class="poster" role="img" aria-label="Boceto del cartel: fondo naranja, 25N en grande, título Nombrarla para detenerla, datos del evento y un código QR">
+      <div class="ptop"><span>Medicina · U. Santa Fe</span><span>Campaña 25N</span></div>
+      <div class="ribbon"></div>
+      <div class="pmid">
+        <div class="big">25N</div>
+        <div class="head">Nombrarla para detenerla.</div>
+        <div class="sub">Plática y actividades sobre la eliminación de la violencia contra las mujeres.</div>
+      </div>
+      <div class="pbot"><div><b>Miércoles 25 de noviembre</b><br>[Hora] · [Aula o explanada]<br>Ven de naranja · 079 opción 1</div><div class="qr" aria-hidden="true"></div></div>
+    </div>
+    <div class="grid">
+      <div class="box"><span class="label">Elementos obligatorios</span><ul>
+        <li>Nombre del día completo (en chico) y "25N" (en grande).</li>
+        <li>Título de la campaña. Alternativas: "Si controla, no es cuidado" o "Lo que se nombra, se puede detener".</li>
+        <li>Fecha, hora, lugar y "Ven de naranja".</li>
+        <li>Número 079 opción 1 y 911.</li>
+        <li>QR a la presentación o a una encuesta de asistencia.</li>
+        <li>Logos de la universidad y la facultad.</li>
+      </ul></div>
+      <div class="box"><span class="label">Qué evitar</span><ul>
+        <li>Fotos de mujeres golpeadas o llorando. Revictimizan y alejan al público.</li>
+        <li>Más de 25 palabras en el cuerpo del cartel.</li>
+        <li>Morado y naranja al mismo peso: el naranja domina, el morado solo acentúa.</li>
+      </ul></div>
+      <div class="box"><span class="label">Formatos</span><p>Impreso doble carta (28 × 43 cm) para pasillos, y versión 1080 × 1350 px para Instagram y grupos de WhatsApp.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="actividades"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">07 · Después de la plática</p>
+    <h2>Actividades</h2>
+    <p>Todas son baratas, se montan en minutos y repasan algo de la plática. Las tres primeras funcionan como circuito de estaciones; las otras tres son con todo el grupo.</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="box act">
+      <div class="meta"><span class="chip o">Estación A</span><span class="chip">9 min</span></div>
+      <h3>Violentómetro gigante</h3>
+      <p>Una tira larga de cinta masking en la pared o el piso, dividida en amarillo, naranja y rojo. Cada equipo recibe 10 tarjetas con situaciones y las pega donde cree que van. Al final se comparan con el violentómetro real y se comenta lo que sorprendió.</p>
+      <details><summary>Tarjetas sugeridas</summary><ul>
+        <li>"Te pide la contraseña de tu celular para demostrar que lo quieres"</li>
+        <li>"Se burla de tu cuerpo frente a sus amigos"</li>
+        <li>"Te dice con quién puedes salir"</li>
+        <li>"Te deja de hablar días como castigo"</li>
+        <li>"Decide en qué gastas tu dinero"</li>
+        <li>"Te empuja durante una discusión"</li>
+        <li>"Amenaza con publicar tus fotos"</li>
+        <li>"Te dice que nadie más te va a querer"</li>
+        <li>"Revisa tu ubicación todo el día"</li>
+        <li>"Rompe tus cosas cuando se enoja"</li>
+      </ul></details>
+    </div>
+
+    <div class="box act">
+      <div class="meta"><span class="chip o">Estación B</span><span class="chip">9 min</span></div>
+      <h3>¿Mito o realidad?</h3>
+      <p>Cada participante tiene una paleta de cartulina: verde de un lado (realidad) y roja del otro (mito). Se lee una frase, todos levantan su paleta al mismo tiempo y se explica la respuesta. Las tarjetas de abajo ya traen la explicación.</p>
+    </div>
+
+    <div class="box act">
+      <div class="meta"><span class="chip o">Estación C</span><span class="chip">9 min</span></div>
+      <h3>¿Qué harías? (si eres testigo)</h3>
+      <p>Se lee una situación corta y el equipo elige qué hacer con 5 tarjetas de acción: <b>distraer, pedir ayuda, documentar, preguntar después, intervenir directo</b>. No hay una sola respuesta correcta; se discute cuál es más segura.</p>
+      <details><summary>Situaciones sugeridas</summary><ul>
+        <li>En una fiesta, un chico no deja de insistirle a una amiga que ya dijo que no.</li>
+        <li>En el camión, un hombre se le acerca demasiado a una estudiante.</li>
+        <li>Una compañera llega seguido con moretones y dice que se cayó.</li>
+        <li>En un grupo de WhatsApp comparten una foto íntima de alguien.</li>
+      </ul></details>
+    </div>
+
+    <div class="box act">
+      <div class="meta"><span class="chip o">Todo el grupo</span><span class="chip">7 min</span></div>
+      <h3>Ruleta de la prevención</h3>
+      <p>Una ruleta de cartón (o una ruleta en línea proyectada) con preguntas de la plática. Quien acierta gana un dulce o un listón naranja.</p>
+      <details><summary>Preguntas de la ruleta</summary><ul>
+        <li>Menciona 3 tipos de violencia que reconoce la ley.</li>
+        <li>¿Qué número marcas para la Línea de las Mujeres?</li>
+        <li>¿Por qué se eligió el 25 de noviembre?</li>
+        <li>Da un ejemplo de violencia económica.</li>
+        <li>¿Qué es lo primero que debes decirle a alguien que te cuenta que vive violencia?</li>
+        <li>¿Qué norma de salud obliga a atender estos casos?</li>
+        <li>Di una señal de la zona amarilla del violentómetro.</li>
+        <li>¿Qué es la violencia digital? Da un ejemplo.</li>
+      </ul></details>
+    </div>
+
+    <div class="box act">
+      <div class="meta"><span class="chip o">Todo el grupo</span><span class="chip">4 min</span></div>
+      <h3>Muro naranja de compromisos</h3>
+      <p>Una cartulina grande con el título "Yo me comprometo a…". Cada persona escribe un compromiso concreto en un post-it naranja y lo pega. Ejemplos: "no reenviar fotos de nadie", "creerle a quien me cuente", "no reírme de chistes machistas". El muro se queda pegado en la facultad los 16 días de activismo.</p>
+    </div>
+
+    <div class="box act">
+      <div class="meta"><span class="chip o">Todo el grupo</span><span class="chip">2 min</span></div>
+      <h3>Foto con marco naranja</h3>
+      <p>Un marco de cartón tipo publicación con "#25N · Yo pinto de naranja". Foto grupal al final y fotos libres para redes. Sirve como evidencia del proyecto para el profesor.</p>
+    </div>
+  </div>
+
+  <div class="sec-head" style="margin-top:16px">
+    <h3>Tarjetas de Mito o realidad</h3>
+    <p>Toquen una tarjeta para ver la respuesta. Úsenlas tal cual en la estación B.</p>
+  </div>
+  <div class="cards" id="myths"></div>
+</div></section>
+
+<section id="materiales"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">08 · Presupuesto</p>
+    <h2>Materiales</h2>
+    <p>Costos aproximados para repartir entre 5. Ajusten con lo que ya tengan.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Material</th><th>Para qué</th><th>Aprox. (MXN)</th></tr></thead>
+    <tbody>
+      <tr><td>Listón naranja (rollo) y seguros</td><td>Moños para entregar en la entrada</td><td class="tab">$80</td></tr>
+      <tr><td>Post-its naranjas (2 paquetes)</td><td>Muro de compromisos</td><td class="tab">$70</td></tr>
+      <tr><td>Cartulinas (8) verde, roja, blanca</td><td>Paletas, muro, ruleta</td><td class="tab">$80</td></tr>
+      <tr><td>Cinta masking (2) y plumones</td><td>Violentómetro, muro</td><td class="tab">$90</td></tr>
+      <tr><td>Impresión de tarjetas</td><td>Violentómetro, ¿Qué harías?</td><td class="tab">$40</td></tr>
+      <tr><td>Carteles doble carta a color (4)</td><td>Difusión en pasillos</td><td class="tab">$120</td></tr>
+      <tr><td>Cartón para marco de foto</td><td>Foto final</td><td class="tab">$40</td></tr>
+      <tr><td>Dulces</td><td>Premios de la ruleta</td><td class="tab">$100</td></tr>
+      <tr><td><b>Total estimado</b></td><td>≈ $125 por persona</td><td class="tab"><b>$620</b></td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="cuidados"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">09 · Ética</p>
+    <h2>Cuidados con el tema</h2>
+    <p>Es probable que alguien del público viva o haya vivido violencia. Estas reglas evitan hacer daño sin querer.</p>
+  </div>
+  <div class="grid g2">
+    <div class="box"><ul>
+      <li>Avisar al inicio que el tema puede ser sensible y que cualquiera puede salir sin dar explicación.</li>
+      <li>Nunca pedir testimonios personales ni preguntar "¿a quién le ha pasado?" esperando respuesta en voz alta.</li>
+      <li>En las actividades, usar situaciones inventadas, nunca casos reales de la escuela.</li>
+    </ul></div>
+    <div class="box"><ul>
+      <li>Tener a una persona del equipo designada por si alguien se afecta, con el contacto de psicología universitaria a la mano.</li>
+      <li>Si alguien se acerca a contar algo: escuchar, creerle, no presionar y darle los números de ayuda.</li>
+      <li>No usar humor que minimice. El tono puede ser dinámico sin hacer chistes del tema.</li>
+    </ul></div>
+  </div>
+  <div class="help">
+    <div class="box"><span class="label">Emergencia</span><b>911</b><p>Peligro inmediato</p></div>
+    <div class="box"><span class="label">Línea de las Mujeres</span><b>079 · 1</b><p>Apoyo psicológico y legal</p></div>
+    <div class="box"><span class="label">Local</span><b style="font-size:1.25rem">Instituto Aguascalientes de las Mujeres</b><p>Verificar número antes de imprimir</p></div>
+  </div>
+</div></section>
+
+<section id="check"><div class="wrap">
+  <div class="sec-head">
+    <p class="label">10 · Antes del día</p>
+    <h2>Checklist del equipo</h2>
+    <p>Se guarda en este navegador conforme lo van marcando.</p>
+  </div>
+  <div class="box check" id="checklist"></div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap" style="display:grid;gap:10px">
+  <span class="label">Fuentes</span>
+  <ul>
+    <li>INEGI. Estadísticas a propósito del Día Internacional de la Eliminación de la Violencia contra la Mujer, con datos de ENDIREH 2021 (inegi.org.mx).</li>
+    <li>Gobierno de México. Línea de las Mujeres 079 opción 1 y Centros LIBRE (nota de La Crónica, octubre de 2026).</li>
+    <li>ONU. Declaración sobre la eliminación de la violencia contra la mujer (1993) y resolución 54/134 (1999).</li>
+    <li>Ley General de Acceso de las Mujeres a una Vida Libre de Violencia. NOM-046-SSA2-2005.</li>
+    <li>OMS. Violencia contra la mujer, nota descriptiva, y guía de primera respuesta para personal de salud.</li>
+    <li>IPN. Violentómetro.</li>
+  </ul>
+</div></footer>
+
+<script>
+const myths=[
+ ["Los celos son una prueba de amor.","m","Los celos excesivos son una forma de control y aparecen en la zona amarilla del violentómetro."],
+ ["Si no hay golpes, no es violencia.","m","La ley reconoce la violencia psicológica, económica, patrimonial, sexual y digital, no solo la física."],
+ ["Revisar el celular de tu pareja sin permiso es una forma de control.","r","Vigilar mensajes o ubicación limita la libertad y la privacidad de la otra persona."],
+ ["La violencia solo pasa en familias con pocos recursos.","m","Ocurre en todos los niveles socioeconómicos y educativos."],
+ ["Compartir fotos íntimas de alguien sin su consentimiento es delito en México.","r","Las reformas conocidas como Ley Olimpia lo sancionan como violencia digital."],
+ ["Si ella no se va, es porque le gusta.","m","Hay dependencia económica, miedo, hijos, aislamiento y amenazas. Salir de una relación violenta es un proceso difícil."],
+ ["La violencia contra las mujeres es un problema de salud pública.","r","La OMS la considera así por su frecuencia y sus efectos en la salud física y mental."],
+ ["El personal de salud solo debe curar las lesiones; lo demás no le toca.","m","La NOM-046 obliga a detectar, atender, orientar y, cuando corresponde, dar aviso al Ministerio Público."]
+];
+const box=document.getElementById('myths');
+myths.forEach(([q,v,a],i)=>{
+  const b=document.createElement('button');
+  b.className='card';b.type='button';b.id='myth-'+i;b.dataset.v=v;b.setAttribute('aria-expanded','false');
+  b.innerHTML=`<span class="q">${q}</span><span class="hint">Toca para ver</span><span class="a"><span class="verdict">${v==='m'?'Mito.':'Realidad.'}</span> ${a}</span>`;
+  b.addEventListener('click',()=>b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')==='true'?'false':'true'));
+  box.appendChild(b);
+});
+
+const items=[
+ "Contacto de psicología universitaria en la diapositiva final",
+ "Número del Instituto Aguascalientes de las Mujeres verificado",
+ "Presentación lista con fuentes en cada dato",
+ "Ensayo cronometrado: plática en 18 minutos o menos",
+ "Cartel impreso y versión para redes publicada",
+ "Tarjetas del violentómetro y de ¿Qué harías? impresas",
+ "Paletas verde/roja (una por participante)",
+ "Ruleta armada y dulces comprados",
+ "Cartulina del muro y post-its naranjas",
+ "Marco para la foto",
+ "Listones naranjas para la entrada",
+ "Todo el equipo con ropa naranja"
+];
+const KEY='camp25n-check';
+let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const cl=document.getElementById('checklist');
+items.forEach((t,i)=>{
+  const l=document.createElement('label');
+  l.innerHTML=`<input type="checkbox" id="chk-${i}" ${saved[i]?'checked':''}><span>${t}</span>`;
+  l.querySelector('input').addEventListener('change',e=>{saved[i]=e.target.checked;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(err){}});
+  cl.appendChild(l);
+});
+</script>
+
+</body></html>
